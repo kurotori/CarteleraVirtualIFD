@@ -1,0 +1,36 @@
+@startuml Cartelera
+    entity noticia{
+        *int: ID
+        string: Titulo
+        string: contenido
+        datetime: fecha
+    }
+    
+    entity tipo{
+        *int: ID
+        int: Nombre
+    }
+
+    entity tiene{
+        *int:ID
+        int: noticia_ID
+        int: tipo_ID
+    }
+
+    entity usuario{
+        *string:nombre
+        varchar:sal
+        varchar:hash
+    }
+
+    entity publica{
+        string:usuario_nombre
+        *int:noticia_ID
+    }
+
+    noticia "1" --> tiene
+    tiene -r> "n" tipo
+    usuario "1" --> publica
+    publica -l> "n" noticia
+
+@enduml

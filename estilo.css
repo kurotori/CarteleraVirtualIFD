@@ -1,0 +1,29 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.columna{
+    height: 100%;
+    float: left;
+
+}
+
+.fila{
+    width: 100%;
+}
+
+#principal{
+    width: 80%;
+    border-right: solid 1px black;
+}
+
+#lateral{
+    width: 20%;
+}
+
+.pantalla{
+    width: 100%;
+    height: 100%;
+}
