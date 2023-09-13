@@ -9,6 +9,14 @@
         public $datos;
     }
 
+    /**
+     * Clase para elementos de las noticias del sitio
+     */
+
+    class NoticiaSitio{
+        public $titulo;
+        public $fecha;
+    }
 
     /** Funciones */
 
@@ -118,4 +126,36 @@
         }
     }
 
+
+    /**
+     * Obtiene las noticias del sitio institucional y devuelve un array con objetos con las mismas
+     */
+
+     function parsearSitio($url){
+        $html=file_get_contents("$url");//"http://ifdmelo.cfe.edu.uy/");
+        $dom = new DomDocument;
+
+        @$dom->loadHTML($html);
+        $buscador=new DOMXPath($dom);
+
+        $clase_titulo="item_title";
+        $clase_fecha="item_published";
+
+        $titulos=$buscador->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $clase_titulo ')]");
+        $fechas=$buscador->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $clase_fecha ')]");
+        
+        $noticias=array();
+
+        $long = count($titulos);
+        //print_r($long);
+
+        for ($i=0; $i < $long; $i++) { 
+            $noticia=new NoticiaSitio;
+            $noticia->titulo = trim($titulos[$i]->textContent);
+            $noticia->fecha = trim($fechas[$i]->textContent);
+            array_push($noticias,$noticia);
+        }
+
+        return $noticias;
+     }
  ?>

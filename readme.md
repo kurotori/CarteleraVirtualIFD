@@ -1,0 +1,1 @@
+requiere php-xml para la version de php instalada (ej: php8.3-xml para php 8.3)

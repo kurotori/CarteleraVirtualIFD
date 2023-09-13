@@ -9,8 +9,17 @@ function cargarLateral() {
     console.log(datosA)
 } 
 
+let datos="";
 async function obtenerNoticiasWeb() {
-    const respuestaWeb = await fetch("https://ifdmelo.cfe.edu.uy/");
-    const datosWeb = await respuestaWeb.blob()
-    console.log(datosWeb)
+   /// const respuestaWeb = await fetch("https://ifdmelo.cfe.edu.uy/");
+    //const datosWeb = await respuestaWeb.blob()
+    //console.log(datosWeb)
+
+    fetch('https://ifdmelo.cfe.edu.uy/').then(
+        respuesta=>{
+            datos = respuesta.blob();
+        }
+    );
+    
+
 }
