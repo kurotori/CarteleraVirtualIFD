@@ -5,6 +5,7 @@ body,html{
 }
 
 .columna{
+    position: relative;
     height: 100%;
     float: left;
 
@@ -15,7 +16,7 @@ body,html{
 }
 
 #principal{
-    width: 80%;
+    width: calc(80% - 1px);
     border-right: solid 1px black;
 }
 

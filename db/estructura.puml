@@ -28,9 +28,16 @@
         *int:noticia_ID
     }
 
+    entity agrega{
+        string:usuario_nombre
+        *int:tipo_ID
+    }
+
     noticia "1" --> tiene
     tiene -r> "n" tipo
     usuario "1" --> publica
     publica -l> "n" noticia
+    usuario "1" --> agrega
+    agrega --> "n" tipo
 
 @enduml
