@@ -16,6 +16,7 @@
     class NoticiaSitio{
         public $titulo;
         public $fecha;
+        public $fecha_str;
     }
 
     /** Funciones */
@@ -126,6 +127,13 @@
         }
     }
 
+    /* function ordenarNoticias($notA, $notB){
+        if () {
+            # code...
+        }
+    }
+ */
+
 
     /**
      * Obtiene las noticias del sitio institucional y devuelve un array con objetos con las mismas
@@ -152,7 +160,12 @@
         for ($i=0; $i < $long; $i++) { 
             $noticia=new NoticiaSitio;
             $noticia->titulo = trim($titulos[$i]->textContent);
-            $noticia->fecha = trim($fechas[$i]->textContent);
+            //$fecha=explode(".",trim($fechas[$i]->textContent));
+            //print_r($fecha);
+            $fecha=strtotime(trim($fechas[$i]->textContent));
+            //print_r($fecha);
+            $noticia->fecha = $fecha;//trim($fechas[$i]->textContent);
+            $noticia->fecha_str = date( 'd/m/Y', $fecha );
             array_push($noticias,$noticia);
         }
 
