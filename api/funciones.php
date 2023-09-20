@@ -13,10 +13,14 @@
      * Clase para elementos de las noticias del sitio
      */
 
-    class NoticiaSitio{
+    class Noticia{
         public $titulo;
         public $fecha;
-        public $fecha_str;
+        //public $fecha_str;
+
+        public function fecha_str(){
+            return date( 'd/m/Y', $this->fecha );
+        }
     }
 
     /** Funciones */
@@ -127,12 +131,18 @@
         }
     }
 
-    /* function ordenarNoticias($notA, $notB){
-        if () {
-            # code...
+
+    /**
+     * Función para ordenar las noticias de acuerdo a la fecha
+     */
+    function ordenarNoticias(Noticia $notA, Noticia $notB){
+        if ($notA->fecha == $notB->fecha) {
+            return 0;
         }
+
+        return ($notA->fecha > $notB->fecha) ? -1 : 1;
     }
- */
+
 
 
     /**
@@ -140,7 +150,7 @@
      */
 
      function parsearSitio($url){
-        $html=file_get_contents("$url");//"http://ifdmelo.cfe.edu.uy/");
+        $html=file_get_contents("$url"); //"http://ifdmelo.cfe.edu.uy/");
         $dom = new DomDocument;
 
         @$dom->loadHTML($html);
@@ -158,14 +168,14 @@
         //print_r($long);
 
         for ($i=0; $i < $long; $i++) { 
-            $noticia=new NoticiaSitio;
+            $noticia=new Noticia;
             $noticia->titulo = trim($titulos[$i]->textContent);
             //$fecha=explode(".",trim($fechas[$i]->textContent));
             //print_r($fecha);
             $fecha=strtotime(trim($fechas[$i]->textContent));
             //print_r($fecha);
             $noticia->fecha = $fecha;//trim($fechas[$i]->textContent);
-            $noticia->fecha_str = date( 'd/m/Y', $fecha );
+            //$noticia->fecha_str //= date( 'd/m/Y', $fecha );
             array_push($noticias,$noticia);
         }
 

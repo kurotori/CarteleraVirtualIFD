@@ -1,5 +1,11 @@
 <?php
 
+
+    /**
+     * Eliminable-
+     * Este archivo es para pruebas.
+     */
+
     include_once "funciones.php";
 
     $html=file_get_contents("http://ifdmelo.cfe.edu.uy/");
