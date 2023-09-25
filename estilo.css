@@ -2,6 +2,7 @@ body,html{
     width: 100%;
     height: 100%;
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .columna{
@@ -27,4 +28,34 @@ body,html{
 .pantalla{
     width: 100%;
     height: 100%;
+}
+
+#tituloNoticias{
+    position: relative;
+    left: 5%;
+    color: dodgerblue;
+    border-bottom: 2px solid darkgreen;
+}
+
+.noticiaTitulo{
+    position: relative;
+    width: 90%;
+    left: 10%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.noticiaFecha{
+    position: relative;
+    width: 95%;
+    text-align: right;
+    font-size: small;
+}
+
+.noticiaBorde{
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: 1px;
+    border-bottom: 1px solid lightgray;
 }

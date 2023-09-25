@@ -3,7 +3,8 @@
         *int: ID
         string: Titulo
         string: contenido
-        datetime: fecha
+        datetime: fecha_inicio
+        datetime: fecha_fin
     }
     
     entity tipo{

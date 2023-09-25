@@ -15,11 +15,12 @@
 
     class Noticia{
         public $titulo;
-        public $fecha;
+        public $fecha_pub;
+        public $fecha_ed;
         //public $fecha_str;
-
-        public function fecha_str(){
-            return date( 'd/m/Y', $this->fecha );
+        public $fecha_cad;
+        public function fecha_pub_str(){
+            return date( 'd/m/Y', $this->fecha_pub );
         }
     }
 
@@ -170,12 +171,12 @@
         for ($i=0; $i < $long; $i++) { 
             $noticia=new Noticia;
             $noticia->titulo = trim($titulos[$i]->textContent);
-            //$fecha=explode(".",trim($fechas[$i]->textContent));
-            //print_r($fecha);
-            $fecha=strtotime(trim($fechas[$i]->textContent));
-            //print_r($fecha);
-            $noticia->fecha = $fecha;//trim($fechas[$i]->textContent);
-            //$noticia->fecha_str //= date( 'd/m/Y', $fecha );
+            
+            $fecha_pub=strtotime(trim($fechas[$i]->textContent));
+            $noticia->fecha_pub = $fecha_pub;
+            $noticia->fecha_ed = $fecha_pub;
+            $noticia->fecha_cad = null;
+
             array_push($noticias,$noticia);
         }
 
