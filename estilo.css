@@ -23,6 +23,12 @@ body,html{
 
 #lateral{
     width: 20%;
+    overflow-y: scroll;
+}
+
+#lateral>li{
+    list-style-type: none;
+    
 }
 
 .pantalla{
@@ -35,6 +41,7 @@ body,html{
     left: 5%;
     color: dodgerblue;
     border-bottom: 2px solid darkgreen;
+    text-align: justify;
 }
 
 .noticiaTitulo{
