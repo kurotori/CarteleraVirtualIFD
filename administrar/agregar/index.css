@@ -1,0 +1,71 @@
+#cuerpo{
+    position: relative;
+    width: 95%;
+    height: 95%;
+    top: 2.5%;
+    bottom: auto;
+    left: 2.5%;
+    right: auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #009ecd;
+}
+
+#banner{
+    height: 10%;
+    min-height: 50px;
+    border-bottom: 1px solid lightgray;
+}
+
+#banner h1{
+    position: relative;
+    left: 15px;
+    display: block;
+    top: calc((100% - 30px)/2);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+.tercio_v{
+    width: calc((100% / 3) - 1px);
+}
+
+.borde_derecho_1pxSolid{
+    border-right: 1px solid lightgray;
+}
+
+#noticias{
+
+}
+
+#inasistencias{
+
+}
+
+.titulo_seccion{
+    height: 5%;
+}
+
+.titulo_seccion h2{
+    margin: 0px;
+    text-align: center;
+}
+
+.herramientas_seccion{
+    height: 5%;
+}
+
+.herramientas_seccion button{
+    height: 100%;
+    width: calc(100% / 3);
+}
+
+.contenido_seccion{
+    height: 90%;
+    overflow-y: scroll;
+}
+
+#contenido{
+    height: 90%;
+}
