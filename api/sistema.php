@@ -7,9 +7,12 @@
     $bdd = new BaseDeDatos;
     $bdd->conectar("../db/bdd.db");
 
+    $resultado = $bdd->conexion->query(".tables");
+    print_r($resultado);
     $respuesta = new Respuesta;
     $respuesta->datos = $bdd->mensaje;
     $respuesta->estado = $bdd->estado;
+    
     //print_r($bdd->mensaje);
     respuestaJSON($respuesta);
 
