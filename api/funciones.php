@@ -17,8 +17,8 @@
         public $titulo;
         public $fecha_pub;
         public $fecha_ed;
-        //public $fecha_str;
         public $fecha_cad;
+        public $tipo;
         public function fecha_pub_str(){
             return date( 'd/m/Y', $this->fecha_pub );
         }

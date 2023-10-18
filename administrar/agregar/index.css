@@ -90,7 +90,7 @@
 
 .lista_contenido li{
     padding: 5px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px dotted lightgrey;
 }
 
 .lista_contenido li:hover{
@@ -105,10 +105,10 @@
     margin: 0px;
 }
 
-.lista_contenido li .nombre{
+.lista_contenido li .titulo_noticia{
     font-weight: bold;
 }
 
-.lista_contenido li .contenido{
+.lista_contenido li .contenido_noticia{
     font-size: small;
 }
