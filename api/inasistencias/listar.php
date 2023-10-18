@@ -1,21 +1,25 @@
 <?php 
-echo("algo");
-include_once "../../bdd.php";
-include_once "../../funciones.php";
 
-$bdd = new SQLite3("bdd.db");
-echo ($bdd->lastErrorCode());
-//$bdd->conectar("../../db/bdd.db");
+include_once "../../api/bdd.php";
+include_once "../../api/funciones.php";
+
+$bdd = new SQLite3("../../db/bdd.db");
 
 $respuesta = new Respuesta;
-print_r($respuesta);
+
 $resultado = $bdd->query("select * from noticia");
 
+$respuesta->datos = array();
 
-while ($datos = $resultado->fetchArray()) {
-    var_dump($datos);
-}
-
+while ($datos = $resultado->fetchArray(SQLITE3_ASSOC)) {
+  $noticia = new Noticia;
+  $noticia->titulo = $datos["titulo"];
+  $noticia->fecha_pub = $datos["fecha_pub"];
+  $noticia->fecha_cad = $datos["fecha_cad"];
+  $noticia->fecha_ed = $datos["fecha_ed"];
+  array_push($respuesta->datos, $noticia);
+};
+respuestaJSON($respuesta);
 
   $bdd->close();
  ?>
