@@ -1,5 +1,10 @@
 const ulListaInasistencias = document.getElementById("lista_inasistencias")
+const divBaseEditor = document.getElementById("baseEditor")
+const btnNuevaInasistencia = document.getElementById("btn_nuevaInasistencia")
+
 const urlListaNoticias = "http://localhost:3000/api/noticias/listar.php"
+
+btnNuevaInasistencia.addEventListener("click",abrirEditorInasistencias)
 
 const noticias = {}
 noticias.lista = []
@@ -51,4 +56,17 @@ function nuevoElementoInasistencia(elemento) {
 
 function vaciarLista(lista) {
     lista.innerHTML = ""
+}
+
+function cortina() {
+    if (divBaseEditor.style.display=="none"||divBaseEditor.style.display.length==0) {
+        divBaseEditor.style.display="block"
+    }
+    else{
+        divBaseEditor.style.display="none"
+    }
+}
+
+function abrirEditorInasistencias(params) {
+    cortina()
 }
