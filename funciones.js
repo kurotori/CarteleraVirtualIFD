@@ -68,7 +68,7 @@ function cargarPrincipal() {
 
 
 async function enviarAlServidor(datos,url) {
-    resultado = await fetch(url, { //'http://localhost:3000/login/login.php', {
+    resultado = await fetch(url, { 
     method: 'POST',
     headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -87,7 +87,7 @@ async function enviarAlServidor(datos,url) {
  * @returns 
  */
 async function solicitarAlServidor(url) {
-    resultado = await fetch(url, { //'http://localhost:3000/login/login.php', {
+    resultado = await fetch(url, { 
     method: 'POST',
     headers: {
         'Accept': 'application/json, text/plain, */*',

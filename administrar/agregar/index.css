@@ -149,24 +149,39 @@
     /*border: 1px solid black;*/
     border-radius: 15px;
     text-align: center;
-    background-color: red;
+    /*background-color: red;*/
+    background-image: url("../../img/cerrar_cla.png");
+    background-size: contain;
     cursor: pointer;
 }
 
 .btnCerrar:hover{
-    background-color: orangered;
+    background-image: url("../../img/cerrar.png");
 }
 
 .btnCerrar:active{
-    background-color: rgb(130, 0, 0);
+    background-image: url("../../img/cerrar_osc.png");
 }
 
-.btnCerrar p{
+#editorTitulo{
     position: relative;
     margin: 0px;
-    font-size: 20px;
-    top: 3px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: white;
+    height: 50%;
+    top: 25%;
+    width: calc(100% - 35px);
+    text-align: center;
+}
+
+.formEditor table{
+    width: 100%;
+}
+
+.formEditor td{
+    text-align: center;
+    width: 50%;
+}
+
+.formEditor td input{
+    width: 90%;
+    text-align: center;
 }

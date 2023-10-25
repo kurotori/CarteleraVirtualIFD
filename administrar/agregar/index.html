@@ -56,9 +56,50 @@
         <div id="zonaEditor" class="columna">
             <div class="fila" id="ventanaEditor">
                 <div class="fila barraTituloEditor">
-                    <div class="btnCerrar">
-                        <p>X</p>
+                    <h3 id="editorTitulo">....</h3>
+                    <div class="btnCerrar" id="btnCerrarEditor">
+                        
                     </div>
+                </div>
+                <div class="fila editor" id="editor">
+                    
+                    <form class="formEditor" id="formEditor">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="titulo" id="noticiaTitulo"></label>
+                                </td>
+                                <td>
+                                    <input type="text" name="titulo" id="titulo">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="titulo" id="noticiaContenido"></label>
+                                </td>
+                                <td>
+                                    <input type="text" name="contenido" id="contenido">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="fecha_pub" id="noticiaFechaPub"></label>
+                                </td>
+                                <td>
+                                    <input type="date" name="fecha_pub" id="fecha_pub">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="fecha_cad" id="noticiaFechaCad">:</label>
+                                </td>
+                                <td>
+                                    <input type="date" name="fecha_cad" id="fecha_cad">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <button id="btnAgregarNoticia"></button>
                 </div>
             </div>
         </div>
