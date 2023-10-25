@@ -173,15 +173,34 @@
 }
 
 .formEditor table{
-    width: 100%;
+    position: relative;
+    width: 75%;
+    left: calc(25% / 2);
 }
 
 .formEditor td{
     text-align: center;
-    width: 50%;
+    width: 65%;
+}
+
+.formEditor td:nth-of-type(1){
+    text-align: left;
+    width: 35%;
 }
 
 .formEditor td input{
     width: 90%;
     text-align: center;
+}
+
+.editor{
+    position: relative;
+    top: 20px;
+}
+
+#btnAgregarNoticia{
+    position: relative;
+    width: 25%;
+    top: 20px;
+    left: calc(75% / 2);
 }

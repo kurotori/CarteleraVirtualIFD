@@ -5,6 +5,7 @@ const btnCerrarEditor = document.getElementById("btnCerrarEditor")
 
 const h3EditorTitulo = document.getElementById("editorTitulo")
 
+const formEditor = document.getElementById("formEditor");
 const lblNoticiaTitulo = document.getElementById("noticiaTitulo")
 const lblNoticiaContenido = document.getElementById("noticiaContenido")
 const lblNoticiaFechaPub = document.getElementById("noticiaFechaPub")
@@ -13,6 +14,7 @@ const inptNoticiaTitulo = document.getElementById("titulo")
 const inptNoticiaContenido = document.getElementById("contenido")
 const inptNoticiaFechaPub = document.getElementById("fecha_pub")
 const inptNoticiaFechaCad = document.getElementById("fecha_cad")
+const inptNoticiaTipo = document.getElementById("tipo")
 const btnAgregarNoticia = document.getElementById("btnAgregarNoticia")
 
 const urlListaNoticias = "http://localhost:3000/api/noticias/listar.php"
@@ -23,6 +25,7 @@ btnCerrarEditor.addEventListener("click",cerrarEditor)
 const noticias = {}
 noticias.lista = []
 //vaciarLista(ulListaInasistencias)
+
 
 
 
@@ -93,9 +96,37 @@ function abrirEditorInasistencias() {
     lblNoticiaContenido.innerText="Motivo:"
     lblNoticiaFechaPub.innerText="Desde el día:"
     lblNoticiaFechaCad.innerText="Hasta el día:"
+    inptNoticiaTipo.value = "2"
     btnAgregarNoticia.innerText="Agregar Inasistencia"
 }
 
 function cerrarEditor() {
     cortina()
+}
+
+function agregarNoticia() {
+    
+    const noticia={
+        titulo:inptNoticiaTitulo.value,
+        contenido:inptNoticiaContenido.value,
+        fecha_pub:inptNoticiaFechaPub.value,
+        fecha_cad:inptNoticiaFechaCad.value
+    }
+
+    valido=false
+
+    if (noticia.titulo.length > 1) {
+        if (noticia.fecha_cad.length > 1) {
+            if (noticia.fecha_cad >= noticia.fecha_pub) {
+                valido=true
+            }
+        }
+    }
+
+    if (valido==true) {
+        enviarAlServidor(noticia,)
+    }
+    else{
+        console.log("NO")
+    }
 }
